@@ -12,4 +12,4 @@ pip install -r requirements.txt
 `./coub.py` (download all liked videos)\
 `./coub.py xyz` (download all videos from user xyz)
 
-![img](https://i.kek.sh/zjLM3sJzK2h.png)
+![img](https://i.kek.sh/aL0HmMqxk0o.gif)
