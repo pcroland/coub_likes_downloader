@@ -7,7 +7,6 @@ from time import sleep
 from rich.progress import track
 from sys import exit
 
-MAX_VIDEO_LENGHT = "30" #seconds
 success = 0
 total = 0
 try:
@@ -27,9 +26,8 @@ for video in track(glob('*high*.mp4'), description='Remux'):
         print(f"No mp3 file found for: {video}")
     else:
         ff_args = ['ffmpeg', '-stream_loop', '-1', '-i', video, '-i', audio,
-                    '-shortest', '-map', '0:v:0', '-map', '1:a:0', 
+                    '-map', '0:v:0', '-map', '1:a:0', 
                     '-c:v', 'copy', '-c:a', 'copy',
-                    '-t', MAX_VIDEO_LENGHT,
                     '-y', final]
 
         print(f"File: {final}")
