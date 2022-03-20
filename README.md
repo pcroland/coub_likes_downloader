@@ -13,3 +13,13 @@ pip install -r requirements.txt
 `./coub.py xyz` (download all videos from user xyz)
 
 ![img](https://i.kek.sh/aL0HmMqxk0o.gif)
+
+## Remuxing the separated mp3 and mp4 files
+
+### FFmpeg
+First of all, you need ffmpeg installed
+
+### Example
+`./remux.py`
+
+This file will create `final` folder in the actual directory, and create the joined coubs under it.
