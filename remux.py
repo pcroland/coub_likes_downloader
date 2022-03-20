@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 
 from glob import glob
-import os.path
+import os
 import subprocess
 from time import sleep
 from rich.progress import track
+from sys import exit
 
 MAX_VIDEO_LENGHT = "30" #seconds
 success = 0
 total = 0
-
-os.mkdir('final')
+try:
+    os.mkdir('final')
+except FileExistsError:
+    pass
+except Exception as e:
+    print(e)
+    exit(1)
 
 for video in track(glob('*high*.mp4'), description='Remux'):
     total += 1
