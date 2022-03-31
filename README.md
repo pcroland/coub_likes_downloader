@@ -13,7 +13,8 @@ pip install -r requirements.txt
 - run script.
 
 ### Examples
-`./coub.py -l` (download all liked videos)\
+`./coub.py -l` (download liked videos)\
+`./coub.py -b` (download bookmarked videos)
 `./coub.py -u xyz` (download all videos from user xyz)
 
 ![img](https://i.kek.sh/aL0HmMqxk0o.gif)
