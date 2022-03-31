@@ -22,6 +22,9 @@ parser.add_argument('-v', '--version',
 parser.add_argument('-l', '--liked',
                     action='store_true',
                     help='download liked coubs')
+parser.add_argument('-b', '--bookmarks',
+                    action='store_true',
+                    help='download bookmarks coubs')
 parser.add_argument('-u', '--user',
                     type=str,
                     default='',
@@ -32,12 +35,14 @@ parser.add_argument('-f', '--force-remux',
 args = parser.parse_args()
 
 def main():
-    if not args.liked and not args.user:
+    if not args.liked and not args.user and not args.bookmarks:
         print('[red]ERROR: you have to use the -l or -u option, see [bold]--help[/bold].[/red]')
         sys.exit(1)
 
     if args.liked:
         search = 'likes'
+    elif args.bookmarks:
+        search = 'favourites'
     elif args.user:
         search = f'channel/{args.user}'
 
